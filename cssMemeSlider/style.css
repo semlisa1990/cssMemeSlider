@@ -4,51 +4,59 @@
     padding: 0;
 }
 
-
-
 body {
     display: flex;
     width: 100%;
     justify-content: center;
-    background-color:darkgray;
+    background-color:#fff;
 }
 
 .wrapper {
     display: grid;
     width: 90vw;
     grid-template-columns: 8fr 3fr;
-    grid-template-rows: 8fr 1fr;
+    grid-template-rows: 6fr 1fr;
+    margin: 1em;
     row-gap: 3%;
-    background-color: black;
+    border-radius: 2%;
+    background-color: #494948;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .img {
     grid-column: 1/3;
-    background-color: #ffff00;
     display: flex;
+    margin-top: 1%;
     justify-content: center;
 }
 
 .text-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: cadetblue;
+    margin-left: 7%;
+    justify-content: start;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 span{
-    margin-right: 10%;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #fff;
+    animation: fade-in 1s ease-in;
 }
-.text-frame{
-    width: 20%;
-    white-space: nowrap;
-    background-color: red;
-}
+
 .btn-container {
     display: flex;
+    margin-right: 18%;
     justify-content: end;
     align-items: flex-start;
-    background-color: #494949;
 }
 
 .buttons {
@@ -76,6 +84,14 @@ span{
     position: relative;
 }
 
+.button-outer:active .button {
+    background-color: white;
+}
+
+.button-outer:hover .button {
+    background-color: white;
+}
+
 .button-inner{
     display: none;
     width: 70%;
@@ -84,9 +100,7 @@ span{
     background-color: #494949;
 }
 
-.button-outer:hover .button {
-    background-color: white;
-}
+
 
 .img-container {
     padding: 0;
@@ -94,6 +108,7 @@ span{
     width: 90%;
     height: auto;
     overflow-x: hidden;
+    border-radius: 2%;
     white-space: nowrap;
 }
 
@@ -101,5 +116,30 @@ img {
     width:100%;
     height: auto;
     object-fit: cover;
+    border-radius: 2%;
     transition: transform 1s ease;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 6fr 1fr 3fr;
+    }
+
+    .text-content{
+        grid-row: 3;
+    }
+
+    .btn-container{
+        margin-right: 0;
+        justify-content: center;
+        align-items:center;
+        grid-row: 2;
+    }
+    .button-inner{
+        margin-top: 1%;
+        width: 80%;
+        height: 80%;
+    }
 }
