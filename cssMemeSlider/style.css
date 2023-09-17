@@ -36,6 +36,10 @@ body {
     justify-content: start;
 }
 
+input[type="radio"]{
+    display: none;
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -104,7 +108,7 @@ span{
 
 .img-container {
     padding: 0;
-    text-align: center;
+    /* text-align: center; */
     width: 90%;
     height: auto;
     overflow-x: hidden;
@@ -114,10 +118,31 @@ span{
 
 img {
     width:100%;
+    margin-right: 2%;
     height: auto;
     object-fit: cover;
     border-radius: 2%;
     transition: transform 1s ease;
+}
+
+input#slide-1:checked ~ .img .img-container .mem{
+    transform: translateX(0);
+}
+input#slide-2:checked ~ .img .img-container .mem{
+    transform: translateX(-102%);
+}
+input#slide-3:checked ~ .img .img-container .mem{
+    transform: translateX(-204%);
+}
+input#slide-4:checked ~ .img .img-container .mem{
+    transform: translateX(-306%);
+}
+
+input#slide-1:checked ~ .btn-container label[for="slide-1"] .button-inner,
+input#slide-2:checked ~ .btn-container label[for="slide-2"] .button-inner,
+input#slide-3:checked ~ .btn-container label[for="slide-3"] .button-inner,
+input#slide-4:checked ~ .btn-container label[for="slide-4"] .button-inner {
+    display: block;
 }
 
 @media (max-width: 600px) {
