@@ -54,6 +54,7 @@ span{
     font-weight: 500;
     color: #fff;
     animation: fade-in 1s ease-in;
+    display: none;
 }
 
 .btn-container {
@@ -136,6 +137,14 @@ input#slide-3:checked ~ .img .img-container .mem{
 }
 input#slide-4:checked ~ .img .img-container .mem{
     transform: translateX(-306%);
+}
+
+input#slide-1:checked ~ .text-content .text-frame #slide1,
+input#slide-2:checked ~ .text-content .text-frame #slide2,
+input#slide-3:checked ~ .text-content .text-frame #slide3,
+input#slide-4:checked ~ .text-content .text-frame #slide4{
+    display: block;
+    opacity: 1;
 }
 
 input#slide-1:checked ~ .btn-container label[for="slide-1"] .button-inner,
