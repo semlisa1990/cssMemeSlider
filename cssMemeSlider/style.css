@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color:#fff;
+}
+
+.wrapper {
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 8fr 3fr;
+    grid-template-rows: 6fr 1fr;
+    margin: 1em;
+    row-gap: 3%;
+    border-radius: 2%;
+    background-color: #494948;
+}
+
+.img {
+    grid-column: 1/3;
+    display: flex;
+    margin-top: 1%;
+    justify-content: center;
+}
+
+.text-content {
+    display: flex;
+    margin-left: 7%;
+    justify-content: start;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+span{
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #fff;
+    animation: fade-in 1s ease-in;
+    display: none;
+}
+
+.btn-container {
+    display: flex;
+    margin-right: 18%;
+    justify-content: end;
+    align-items: flex-start;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-outer{
+    display: flex;
+    width: 1.5em;
+    height: 2em;
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    width: 1em;
+    height: 1em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color:cornflowerblue;
+}
+
+.button-outer:active .button {
+    background-color: white;
+}
+
+.button-outer:hover .button {
+    background-color: white;
+}
+
+.button-inner{
+    display: none;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: #494949;
+}
+
+
+
+.img-container {
+    padding: 0;
+    width: 90%;
+    height: auto;
+    overflow-x: hidden;
+    border-radius: 2%;
+    white-space: nowrap;
+}
+
+img {
+    width:100%;
+    margin-right: 2%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2%;
+    transition: transform 1s ease;
+}
+
+input#slide-1:checked ~ .img .img-container .mem{
+    transform: translateX(0);
+}
+input#slide-2:checked ~ .img .img-container .mem{
+    transform: translateX(-102%);
+}
+input#slide-3:checked ~ .img .img-container .mem{
+    transform: translateX(-204%);
+}
+input#slide-4:checked ~ .img .img-container .mem{
+    transform: translateX(-306%);
+}
+
+input#slide-1:checked ~ .text-content .text-frame #slide1,
+input#slide-2:checked ~ .text-content .text-frame #slide2,
+input#slide-3:checked ~ .text-content .text-frame #slide3,
+input#slide-4:checked ~ .text-content .text-frame #slide4{
+    display: block;
+    opacity: 1;
+}
+
+input#slide-1:checked ~ .btn-container label[for="slide-1"] .button-inner,
+input#slide-2:checked ~ .btn-container label[for="slide-2"] .button-inner,
+input#slide-3:checked ~ .btn-container label[for="slide-3"] .button-inner,
+input#slide-4:checked ~ .btn-container label[for="slide-4"] .button-inner {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 6fr 1fr 3fr;
+    }
+
+    .text-content{
+        grid-row: 3;
+    }
+
+    .btn-container{
+        margin-right: 0;
+        justify-content: center;
+        align-items:center;
+        grid-row: 2;
+    }
+    .button-inner{
+        margin-top: 1%;
+        width: 80%;
+        height: 80%;
+    }
+}
