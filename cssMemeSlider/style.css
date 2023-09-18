@@ -20,7 +20,6 @@ body {
     row-gap: 3%;
     border-radius: 2%;
     background-color: #494948;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .img {
@@ -86,7 +85,6 @@ span{
     justify-content: center;
     border-radius: 50%;
     background-color:cornflowerblue;
-    position: relative;
 }
 
 .button-outer:active .button {
