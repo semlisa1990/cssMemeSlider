@@ -116,6 +116,7 @@ span{
 
 img {
     width:100%;
+    margin-right: 2%;
     height: auto;
     object-fit: cover;
     border-radius: 2%;
@@ -126,13 +127,13 @@ input#slide-1:checked ~ .img .img-container .mem{
     transform: translateX(0);
 }
 input#slide-2:checked ~ .img .img-container .mem{
-    transform: translateX(-100%);
+    transform: translateX(-102%);
 }
 input#slide-3:checked ~ .img .img-container .mem{
-    transform: translateX(-200%);
+    transform: translateX(-204%);
 }
 input#slide-4:checked ~ .img .img-container .mem{
-    transform: translateX(-300%);
+    transform: translateX(-306%);
 }
 
 input#slide-1:checked ~ .text-content .text-frame #slide1,
